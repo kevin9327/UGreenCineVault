@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+hyperframes-spot/.hyperframes/
+node_modules/
+public/audio/narration_ugreen_raw.wav

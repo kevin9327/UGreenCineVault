@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineVault Studio — UGREEN AI NAS Uliya Skill Orchestrator &amp; Workbench</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand-wrap">
+      <div class="brand-logo">UG</div>
+      <div>
+        <div class="brand-title">CineVault Studio · <code>cinevault-roughcut-director</code></div>
+        <div class="brand-sub">UGREEN Hackathon 2026 on AI NAS · Track: Unleash Your Creativity · Uliya Skill Kit v0.7.3 (Catalog 2.0.0)</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="btn-judge-tour" class="btn btn-primary">⚡ Judge 60-Second Guided Tour</button>
+      <a href="downloads/CineVault_UGREEN_Round1_Proposal.pdf" download class="btn">📄 Proposal PDF (336 words)</a>
+      <a href="downloads/cinevault-roughcut-director.zip" download class="btn">📦 Pre-test Skill ZIP (static-pass)</a>
+    </div>
+  </header>
+
+  <nav class="nav-tabs" role="tablist">
+    <button class="tab-btn active" data-tab="tab-orchestration">1. 5-Expert Uliya Orchestration</button>
+    <button class="tab-btn" data-tab="tab-eds">2. Rough-Cut EDS &amp; Multimodal Previz</button>
+    <button class="tab-btn" data-tab="tab-validator">3. Official check-skill.mjs Validator</button>
+    <button class="tab-btn" data-tab="tab-benchmark">4. 12-Workload NAS Benchmark</button>
+    <button class="tab-btn" data-tab="tab-mcp">5. Uliya Catalog v2.0.0 &amp; MCP Server</button>
+  </nav>
+
+  <main class="container">
+    <div id="tour-banner" class="tour-banner">
+      <span id="tour-step-text">Guided Tour Active: Inspecting 5-Expert Uliya Orchestration Pipeline...</span>
+      <button id="btn-stop-tour" class="btn">Stop Tour</button>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Official Static Check</div>
+        <div class="kpi-val">0 Errors</div>
+        <div class="kpi-desc"><code>status: "static-pass"</code> (0 warnings, 0 info)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Registered NAS Experts</div>
+        <div class="kpi-val">5 / 6 Experts</div>
+        <div class="kpi-desc">8 Native Uliya CLIs chained deterministically</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Rough-Cut Prep Speedup</div>
+        <div class="kpi-val">205.2x</div>
+        <div class="kpi-desc">14.2s vs. 48.5 min manual across 5 NAS apps</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Unapproved Write Leak</div>
+        <div class="kpi-val">0.0%</div>
+        <div class="kpi-desc">Strict <code>waiting_approval</code> &amp; empty-result abstention</div>
+      </div>
+    </div>
+
+    <!-- TAB 1: 5-EXPERT ULIYA ORCHESTRATION -->
+    <section id="tab-orchestration" class="tab-panel active">
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>UGREEN AI NAS Workspace Selector &amp; Multi-Expert Delegation Pipeline</span>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <label for="workspace-select" style="font-size:13px; color:#CBD5E1;">Authorized NAS Scope:</label>
+            <select id="workspace-select" class="select-input">
+              <option value="tokyo-neon-doc-2026">Core Case 1: Tokyo Neon 4K Documentary Shoot (28 files, 2 duplicates)</option>
+              <option value="alpine-brand-film-2026">Core Case 2: Alpine EV Commercial Shoot (Drone 8K + Subtitles)</option>
+              <option value="zero-match-edge-2030">Edge Case: Future Date 2030 Window (Zero-Match Abstention Proof)</option>
+            </select>
+            <button id="btn-run-pipeline" class="btn btn-primary">▶ Execute Skill Workflow</button>
+          </div>
+        </div>
+        <div id="workspace-meta" style="margin-bottom: 16px; font-size: 14px; color: #CBD5E1;"></div>
+        <div id="delegation-stages"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ROUGH-CUT EDS & MULTIMODAL PREVIZ -->
+    <section id="tab-eds" class="tab-panel">
+      <div class="grid-2">
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>Compiled Timecoded Edit Decision Sheet (EDS) &amp; SHA-256 Dedupe Manifest</span>
+            <span class="badge badge-pass">ug-knowledge save-text (workflow approved)</span>
+          </div>
+          <div id="eds-markdown-box" class="code-box" style="min-height: 360px; font-size: 13.5px;"></div>
+        </div>
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>1080p HyperFrames Flagship Demo &amp; Audio Rough-Cut Stems</span>
+            <span class="badge badge-pass">1920×1080 @ 30fps</span>
+          </div>
+          <video class="video-frame" controls preload="metadata" poster="">
+            <source src="renders/CineVault_UGREEN_Flagship_Demo_1080p.mp4" type="video/mp4" />
+          </video>
+          <div class="audio-row">
+            <div class="audio-card">
+              <div style="font-weight:800; font-size:13px; color:#6EE7B7;">Master Mix (-14 LUFS · AI Studio TTS + FlowMusic)</div>
+              <audio controls preload="none" src="audio/cinevault_master_mix.mp3"></audio>
+            </div>
+            <div class="audio-card">
+              <div style="font-weight:800; font-size:13px; color:#6EE7B7;">Google AI Studio Narration (Gemini 3.8 Flash TTS)</div>
+              <audio controls preload="none" src="audio/narration_ugreen.mp3"></audio>
+            </div>
+            <div class="audio-card">
+              <div style="font-weight:800; font-size:13px; color:#6EE7B7;">NAS Music Stem 01 (ug-music search match)</div>
+              <audio controls preload="none" src="audio/cue_01_trip_hop_drama.mp3"></audio>
+            </div>
+            <div class="audio-card">
+              <div style="font-weight:800; font-size:13px; color:#6EE7B7;">NAS Music Stem 02 (ug-music search match)</div>
+              <audio controls preload="none" src="audio/cue_02_latin_noir_thriller.mp3"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: OFFICIAL CHECK-SKILL.MJS VALIDATOR -->
+    <section id="tab-validator" class="tab-panel">
+      <div class="grid-2">
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>Official <code>check-skill.mjs</code> (v2.0.0) Static Verification Report</span>
+            <span id="checker-badge" class="badge badge-pass">status: static-pass</span>
+          </div>
+          <p style="font-size:13.5px; color:#CBD5E1; margin-bottom:12px;">
+            Executed directly via <code>node uliya-skill-kit/scripts/check-skill.mjs skill-package/cinevault-roughcut-director</code> against <code>capability-catalog.json</code> (v2.0.0).
+          </p>
+          <div id="checker-json-box" class="code-box" style="min-height: 360px;"></div>
+        </div>
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>Skill Package File Inspector (<code>cinevault-roughcut-director.zip</code>)</span>
+            <select id="skill-file-select" class="select-input"></select>
+          </div>
+          <div id="skill-file-content" class="code-box" style="min-height: 390px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: 12-WORKLOAD QUANTITATIVE BENCHMARK -->
+    <section id="tab-benchmark" class="tab-panel">
+      <div class="panel-card">
+        <div class="panel-title">
+          <span>12-Scenario Evaluation: CineVault Uliya 5-Expert Orchestrator vs. Unconstrained Direct-CLI LLM vs. Manual NAS Ops</span>
+          <span class="badge badge-pass">UGREEN-Uliya-Bench-v2.0</span>
+        </div>
+        <div id="benchmark-summary-bars" style="margin-bottom: 18px;"></div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Creator NAS Production Workload</th>
+              <th>Manual 5-App Time</th>
+              <th>Direct-CLI LLM Policy/Path Errors</th>
+              <th>CineVault Orchestration Time</th>
+              <th>CineVault Errors / Leaks</th>
+            </tr>
+          </thead>
+          <tbody id="benchmark-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 5: ULIYA CATALOG V2.0.0 & MCP SERVER -->
+    <section id="tab-mcp" class="tab-panel">
+      <div class="grid-2">
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>UGREEN Uliya Public Capability Catalog (v2.0.0 · 9 CLIs · 6 Registered Experts)</span>
+            <span class="badge badge-pass">55+ Verified Actions</span>
+          </div>
+          <div id="catalog-table-wrap"></div>
+        </div>
+        <div class="panel-card">
+          <div class="panel-title">
+            <span>Interactive Model Context Protocol (MCP) JSON-RPC 2.0 Inspector</span>
+            <button id="btn-invoke-mcp" class="btn btn-primary">▶ Invoke MCP Tool</button>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <label for="mcp-tool-select" style="font-size:13px; color:#CBD5E1;">Select MCP Tool:</label>
+            <select id="mcp-tool-select" class="select-input" style="width:100%; margin-top:6px;"></select>
+          </div>
+          <div id="mcp-output-box" class="code-box" style="min-height: 330px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
