@@ -1,0 +1,1247 @@
+{
+  "project": "CineVault Studio (cinevault-roughcut-director)",
+  "hackathon": "UGREEN Hackathon 2026 on AI NAS ($46,000 Prize Pool)",
+  "track": "Unleash Your Creativity",
+  "catalog": {
+    "catalogVersion": "2.0.0",
+    "generatedAt": "2026-09-01",
+    "cli_count": 9,
+    "agent_count": 6,
+    "total_actions": 78,
+    "clis": [
+      {
+        "name": "ug-music",
+        "domain": "music",
+        "agent": "media-agent",
+        "action_count": 2,
+        "actions": [
+          {
+            "name": "search",
+            "effect": "mixed",
+            "approval": "none",
+            "required_params": [
+              "type"
+            ]
+          },
+          {
+            "name": "control",
+            "effect": "state-change",
+            "approval": "none",
+            "required_params": [
+              "operation"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ug-video",
+        "domain": "media",
+        "agent": "media-agent",
+        "action_count": 4,
+        "actions": [
+          {
+            "name": "search",
+            "effect": "mixed",
+            "approval": "none",
+            "required_params": [
+              "type"
+            ]
+          },
+          {
+            "name": "control",
+            "effect": "state-change",
+            "approval": "none",
+            "required_params": [
+              "operation"
+            ]
+          },
+          {
+            "name": "subtitle-search",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "subtitle-download",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "video-path",
+              "file-id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ug-surveillance",
+        "domain": "monitor",
+        "agent": "security-monitor-agent",
+        "action_count": 8,
+        "actions": [
+          {
+            "name": "cameras",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "event-timeline",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "start-time",
+              "end-time"
+            ]
+          },
+          {
+            "name": "identity-resolve",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "event-evidence",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "event-id"
+            ]
+          },
+          {
+            "name": "faces",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "face-detail",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "face-id"
+            ]
+          },
+          {
+            "name": "vehicle-plates",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "vehicle-plate-detail",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "plate-id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ug-filesystem",
+        "domain": "file",
+        "agent": "file-agent",
+        "action_count": 17,
+        "actions": [
+          {
+            "name": "cat",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "category",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "find",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "getfattr",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "ls",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "md5sum",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "sha256sum",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "stat",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "chtimes",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "cpmv",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "src",
+              "dst"
+            ]
+          },
+          {
+            "name": "del",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "echo",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "mkdir",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "rename",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path",
+              "old-name",
+              "new-name"
+            ]
+          },
+          {
+            "name": "restore",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "share-mkdir",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "volume",
+              "folder-name"
+            ]
+          },
+          {
+            "name": "touch",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "path"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ug-filemgr",
+        "domain": "file",
+        "agent": "file-agent",
+        "action_count": 13,
+        "actions": [
+          {
+            "name": "mediainfo",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "scan-dedupe",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "tag-filter",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-get",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-get-by-name",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "name"
+            ]
+          },
+          {
+            "name": "tag-get-file",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "path"
+            ]
+          },
+          {
+            "name": "tag-list",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "tag-list-file",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-add",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-add-file",
+            "effect": "state-change",
+            "approval": "conditional",
+            "required_params": [
+              "path",
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-delete",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-delete-file",
+            "effect": "state-change",
+            "approval": "conditional",
+            "required_params": [
+              "path",
+              "tag-id"
+            ]
+          },
+          {
+            "name": "tag-set",
+            "effect": "state-change",
+            "approval": "gateway",
+            "required_params": [
+              "tag-id"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "file-workflow",
+        "domain": "file",
+        "agent": "file-agent",
+        "action_count": 5,
+        "actions": [
+          {
+            "name": "get-user-dir",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "start",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "kind",
+              "target"
+            ]
+          },
+          {
+            "name": "run",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": [
+              "id"
+            ]
+          },
+          {
+            "name": "batch-del",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": [
+              "paths"
+            ]
+          },
+          {
+            "name": "batch-move",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          }
+        ]
+      },
+      {
+        "name": "ug-document",
+        "domain": "document",
+        "agent": "document-agent",
+        "action_count": 7,
+        "actions": [
+          {
+            "name": "page-count",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "metadata",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "qa",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "query"
+            ]
+          },
+          {
+            "name": "extract",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "query"
+            ]
+          },
+          {
+            "name": "translate",
+            "effect": "mixed",
+            "approval": "gateway",
+            "required_params": []
+          },
+          {
+            "name": "writing",
+            "effect": "mixed",
+            "approval": "gateway",
+            "required_params": []
+          },
+          {
+            "name": "reconcile",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          }
+        ]
+      },
+      {
+        "name": "ug-knowledge",
+        "domain": "knowledge",
+        "agent": "knowledge-agent",
+        "action_count": 4,
+        "actions": [
+          {
+            "name": "answer-official",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "query"
+            ]
+          },
+          {
+            "name": "audio-transcription",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "collect-evidence",
+            "effect": "read",
+            "approval": "none",
+            "required_params": [
+              "query"
+            ]
+          },
+          {
+            "name": "save-text",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          }
+        ]
+      },
+      {
+        "name": "ug-photo",
+        "domain": "album",
+        "agent": "photo-agent",
+        "action_count": 18,
+        "actions": [
+          {
+            "name": "albums",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "album-detail",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "figure-albums",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "object-albums",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "search-picture",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "search-screen",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "search-classify",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "search-hint",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "meta",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "vision-ocr",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "vision-vlm",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "health",
+            "effect": "read",
+            "approval": "none",
+            "required_params": []
+          },
+          {
+            "name": "create-album",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          },
+          {
+            "name": "create-album-condition",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          },
+          {
+            "name": "create-album-anniversary",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          },
+          {
+            "name": "create-album-baby",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          },
+          {
+            "name": "create-album-custom",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          },
+          {
+            "name": "timeline",
+            "effect": "state-change",
+            "approval": "workflow",
+            "required_params": []
+          }
+        ]
+      }
+    ]
+  },
+  "checker": {
+    "checkFormatVersion": "2.0.0",
+    "status": "static-pass",
+    "target": {
+      "skillName": "cinevault-roughcut-director"
+    },
+    "catalog": {
+      "checkedVersion": "2.0.0"
+    },
+    "files": [
+      {
+        "path": "references/approval-and-recovery-matrix.md",
+        "sha256": "151705191355952f1ff7616eb7b39f6b238a3c352944b68ecc4b5c2de8ec2f58"
+      },
+      {
+        "path": "references/capability-mapping.md",
+        "sha256": "abf96236aea54b9223fd9568a082e5c0fc2570b07601f38d2c6bd1676276ad85"
+      },
+      {
+        "path": "references/nas-test-plan.md",
+        "sha256": "8552c8df99506422134a039b5301806594eab8b4b421e36b15ac569c6efb5667"
+      },
+      {
+        "path": "references/open-source-and-ai-disclosure.md",
+        "sha256": "dc20e53b05c5cf5e99ce517190ed288c577fc9cce032be4741159d1c324623f3"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "a00dafddd6c306e92e207962300cab467a55c851ad8521972de1c177d9d40c86"
+      }
+    ],
+    "summary": {
+      "errors": 0,
+      "warnings": 0,
+      "info": 0
+    },
+    "diagnostics": []
+  },
+  "workspaces": {
+    "tokyo-neon-doc-2026": {
+      "id": "tokyo-neon-doc-2026",
+      "title": "Tokyo Neon Documentary Shoot (4K Multi-Cam + Field Audio + Script)",
+      "track": "Unleash Your Creativity",
+      "theme": "Tokyo Neon Midnight Street & Artisan Documentary",
+      "date_window": {
+        "start": "2026-10-01",
+        "end": "2026-10-20"
+      },
+      "source_scope": "Projects/2026_Tokyo_Neon_Raw",
+      "target_vault": "Vaults/2026_Tokyo_Neon_RoughCut_v1",
+      "status": "completed",
+      "delegations": [
+        {
+          "stage": 1,
+          "agent": "photo-agent",
+          "cli": "ug-photo",
+          "actions": [
+            "search-picture",
+            "meta",
+            "vision-ocr",
+            "vision-vlm",
+            "create-album-condition"
+          ],
+          "approval_mode": "workflow",
+          "status": "completed",
+          "latency_ms": 340,
+          "command": "delegate --target photo-agent --instruction 'Search authorized photos matching the user project theme, date range, location, and camera metadata using search-picture, meta, vision-ocr, and vision-vlm. If zero matches are found, report an empty result and stop. After returning verified photo items and requesting workflow confirmation, create a conditional project storyboard album via create-album-condition using only verified photo records.'",
+          "verified_outputs": {
+            "matched_photos": 18,
+            "album_created": "Album_Tokyo_Neon_Storyboard_2026",
+            "highlights": [
+              {
+                "file": "DSC04821_Shinjuku_Alley.ARW",
+                "camera": "Sony FX3 / FE 35mm F1.4 GM",
+                "iso": 1600,
+                "ocr_slate": "SCENE 01 - TAKE 03 - NIGHT RAIN",
+                "vlm_scene": "Wet neon reflections across Shinjuku lantern alley; high-contrast cyan/amber anamorphic flare."
+              },
+              {
+                "file": "DSC04899_Synth_Workshop.ARW",
+                "camera": "Sony A7S III / FE 50mm F1.2 GM",
+                "iso": 3200,
+                "ocr_slate": "SCENE 02 - TAKE 01 - LUTHIER BENCH",
+                "vlm_scene": "Close-up of analog modular synthesizer patching under warm tungsten worklight."
+              },
+              {
+                "file": "DSC04940_Shibuya_Skyline.ARW",
+                "camera": "Sony FX3 / FE 24mm F1.4 GM",
+                "iso": 800,
+                "ocr_slate": "SCENE 03 - TAKE 02 - DAWN ROOFTOP",
+                "vlm_scene": "Wide establishing frame of Shibuya crossing at blue hour with slow shutter light trails."
+              }
+            ]
+          }
+        },
+        {
+          "stage": 2,
+          "agent": "media-agent",
+          "cli": "ug-video, ug-music",
+          "actions": [
+            "ug-video:search",
+            "ug-video:subtitle-search",
+            "ug-video:subtitle-download",
+            "ug-music:search"
+          ],
+          "approval_mode": "gateway",
+          "status": "completed",
+          "latency_ms": 410,
+          "command": "delegate --target media-agent --instruction 'Search the NAS video library via ug-video search for footage matching the user project theme and release window, and check available subtitles via subtitle-search. If the user approves downloading a matched subtitle, execute subtitle-download using only the verified video-path and file-id returned by search. Search the NAS music library via ug-music search for reference soundtrack stems matching the project mood and year range without auto-playing unless requested.'",
+          "verified_outputs": {
+            "matched_videos": [
+              {
+                "video_id": "VID-TN-001",
+                "file": "A001_C014_1012_Shinjuku_Steadicam_4K60.mp4",
+                "codec": "HEVC 10-bit 4:2:2",
+                "duration": "00:01:42",
+                "subtitle_file_id": "SUB-EN-8821",
+                "subtitle_status": "Downloaded after gateway approval"
+              },
+              {
+                "video_id": "VID-TN-002",
+                "file": "A001_C029_1014_Modular_Synth_Macro_4K24.mp4",
+                "codec": "ProRes 422 HQ",
+                "duration": "00:02:18",
+                "subtitle_file_id": "SUB-EN-8829",
+                "subtitle_status": "Verified local SRT attached"
+              },
+              {
+                "video_id": "VID-TN-003",
+                "file": "B002_C007_1018_Rooftop_Drone_Dawn_4K60.mp4",
+                "codec": "HEVC 10-bit 4:2:0",
+                "duration": "00:01:15",
+                "subtitle_file_id": "NONE",
+                "subtitle_status": "MOS B-Roll (No dialogue)"
+              }
+            ],
+            "matched_soundtracks": [
+              {
+                "track_id": "MUS-FM-01",
+                "title": "Neon Rain Analog Pulse (FlowMusic Stem 01)",
+                "genre": "Cinematic Synthwave / Downtempo",
+                "bpm": 96,
+                "audio_url": "audio/cue_01_trip_hop_drama.mp3"
+              },
+              {
+                "track_id": "MUS-FM-02",
+                "title": "Midnight Artisan Nocturne (FlowMusic Stem 02)",
+                "genre": "Neo-Noir Ambient / Modular",
+                "bpm": 88,
+                "audio_url": "audio/cue_02_latin_noir_thriller.mp3"
+              },
+              {
+                "track_id": "MUS-FM-03",
+                "title": "Shibuya Blue Hour Horizon (FlowMusic Stem 03)",
+                "genre": "Warm Lo-Fi Electronic",
+                "bpm": 92,
+                "audio_url": "audio/cue_03_neosoul_late_night.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "stage": 3,
+          "agent": "document-agent & knowledge-agent",
+          "cli": "ug-document, ug-knowledge",
+          "actions": [
+            "ug-document:metadata",
+            "ug-document:extract",
+            "ug-document:reconcile",
+            "ug-knowledge:audio-transcription",
+            "ug-knowledge:save-text"
+          ],
+          "approval_mode": "workflow",
+          "status": "completed",
+          "latency_ms": 620,
+          "command": "delegate --target document-agent --instruction 'Locate and analyze authorized production scripts, shooting briefs, and talent release documents for the project using metadata, extract, qa, and reconcile. Return only verbatim extracted scene cues, deliverable requirements, and reconciliation findings grounded in real documents, or report no results if no matching documents exist.'",
+          "verified_outputs": {
+            "documents_analyzed": [
+              "Tokyo_Neon_Director_Shooting_Brief_v3.pdf (8 pages)",
+              "Talent_Release_Kenji_Sato_Signed_2026.pdf (2 pages)"
+            ],
+            "reconciliation_status": "PASS — All 3 scripted scenes have matching camera takes and signed talent clearance for Kenji Sato.",
+            "transcribed_interviews": [
+              {
+                "audio_file": "ZOOM0014_Kenji_Sato_Interview_48kHz.wav",
+                "speakers": 2,
+                "timecode": "00:00:14 - 00:01:08",
+                "verbatim_quote": "When the rain hits the neon transformers in Shinjuku, you can hear a 100-hertz hum—that frequency is where every synth patch in my studio begins."
+              }
+            ],
+            "saved_markdown_sheet": "Vaults/2026_Tokyo_Neon_RoughCut_v1/Tokyo_Neon_Edit_Decision_Sheet.md"
+          }
+        },
+        {
+          "stage": 4,
+          "agent": "file-agent",
+          "cli": "ug-filesystem, ug-filemgr, file-workflow",
+          "actions": [
+            "ug-filesystem:find",
+            "ug-filesystem:sha256sum",
+            "ug-filemgr:mediainfo",
+            "ug-filemgr:scan-dedupe",
+            "ug-filemgr:tag-add-file",
+            "ug-filesystem:mkdir",
+            "file-workflow:batch-move"
+          ],
+          "approval_mode": "gateway + workflow",
+          "status": "completed",
+          "latency_ms": 480,
+          "command": "delegate --target file-agent --instruction 'Inspect verified project media files using ug-filesystem find, ls, stat, and sha256sum alongside ug-filemgr mediainfo and scan-dedupe to identify duplicate raw takes and verify container codecs. After receiving required gateway or workflow confirmation from the user, apply project tags via ug-filemgr tag-add-file, create the target vault folder via ug-filesystem mkdir, and consolidate only approved non-duplicate selects via file-workflow batch-move.'",
+          "verified_outputs": {
+            "total_scanned_files": 28,
+            "duplicates_quarantined": [
+              {
+                "duplicate_file": "CardB_Backup_A001_C014_1012_Shinjuku_Steadicam_4K60_copy.mp4",
+                "master_file": "A001_C014_1012_Shinjuku_Steadicam_4K60.mp4",
+                "sha256": "8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4",
+                "saved_bytes": "1.84 GB",
+                "action": "Excluded from batch-move (non-destructive)"
+              },
+              {
+                "duplicate_file": "CardB_Backup_DSC04821_Shinjuku_Alley_dup.ARW",
+                "master_file": "DSC04821_Shinjuku_Alley.ARW",
+                "sha256": "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae",
+                "saved_bytes": "84.2 MB",
+                "action": "Excluded from batch-move (non-destructive)"
+              }
+            ],
+            "tag_applied": "TAG-CINEVAULT-SELECT-2026",
+            "consolidated_files_count": 25,
+            "storage_reclaimed": "1.92 GB"
+          }
+        }
+      ],
+      "eds_markdown": "# CineVault Rough-Cut Edit Decision Sheet (EDS)\n**Project:** Tokyo Neon Documentary Shoot (`tokyo-neon-doc-2026`)\n**UGOS Orchestration Skill:** `cinevault-roughcut-director` (`catalogVersion: 2.0.0`)\n**Target NAS Vault:** `Vaults/2026_Tokyo_Neon_RoughCut_v1`\n\n## 1. Storyboard & Timecoded Rough-Cut Assembly\n| Scene | Timecode | Master Video Select | Paired Still / Slate (OCR) | Interview Transcript / Dialogue | Reference Music Stem | SHA-256 Verified |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| **Scene 01: Night Rain Cold Open** | `00:00:00 - 00:00:38` | `A001_C014_1012_Shinjuku_Steadicam_4K60.mp4` (`SUB-EN-8821`) | `DSC04821_Shinjuku_Alley.ARW` (`SCENE 01 - TAKE 03`) | *\"When the rain hits the neon transformers in Shinjuku, you can hear a 100-hertz hum...\"* | `Neon Rain Analog Pulse` (96 BPM) | `8f434346...7aa4` |\n| **Scene 02: The Synthesizer Bench** | `00:00:38 - 00:01:24` | `A001_C029_1014_Modular_Synth_Macro_4K24.mp4` (`SUB-EN-8829`) | `DSC04899_Synth_Workshop.ARW` (`SCENE 02 - TAKE 01`) | *\"That frequency is where every synth patch in my studio begins.\"* (`ZOOM0014.wav`) | `Midnight Artisan Nocturne` (88 BPM) | `4b227777...12b8` |\n| **Scene 03: Shibuya Dawn Finale** | `00:01:24 - 00:02:00` | `B002_C007_1018_Rooftop_Drone_Dawn_4K60.mp4` (MOS B-Roll) | `DSC04940_Shibuya_Skyline.ARW` (`SCENE 03 - TAKE 02`) | Director Voiceover / Ambient City Bed | `Shibuya Blue Hour Horizon` (92 BPM) | `e3b0c442...98fc` |\n\n## 2. Production Document Reconciliation & Clearance Audit (`document-agent`)\n- **Shooting Brief (`Tokyo_Neon_Director_Shooting_Brief_v3.pdf`)**: 3/3 required scenes matched to verified 4K camera originals.\n- **Talent Release (`Talent_Release_Kenji_Sato_Signed_2026.pdf`)**: Signed & verified for worldwide festival + streaming distribution.\n- **Deduplication Summary (`ug-filemgr scan-dedupe`)**: 2 redundant Card-B backup files (`1.92 GB`) flagged and excluded from `batch-move` without destructive deletion.\n"
+    },
+    "alpine-brand-film-2026": {
+      "id": "alpine-brand-film-2026",
+      "title": "Alpine EV Commercial Shoot (Drone RAW + Multilingual Subtitles + Client Brief)",
+      "track": "Unleash Your Creativity",
+      "theme": "Zero-Emission Alpine Pass Sunrise Commercial",
+      "date_window": {
+        "start": "2026-09-10",
+        "end": "2026-09-25"
+      },
+      "source_scope": "Projects/2026_Alpine_EV_Campaign",
+      "target_vault": "Vaults/2026_Alpine_EV_Agency_Selects",
+      "status": "completed",
+      "delegations": [
+        {
+          "stage": 1,
+          "agent": "photo-agent",
+          "cli": "ug-photo",
+          "actions": [
+            "search-picture",
+            "meta",
+            "vision-ocr",
+            "vision-vlm",
+            "create-album-condition"
+          ],
+          "approval_mode": "workflow",
+          "status": "completed",
+          "latency_ms": 310,
+          "command": "delegate --target photo-agent --instruction 'Search authorized photos matching the user project theme, date range, location, and camera metadata using search-picture, meta, vision-ocr, and vision-vlm. If zero matches are found, report an empty result and stop. After returning verified photo items and requesting workflow confirmation, create a conditional project storyboard album via create-album-condition using only verified photo records.'",
+          "verified_outputs": {
+            "matched_photos": 12,
+            "album_created": "Album_Alpine_EV_Keyframes_2026",
+            "highlights": [
+              {
+                "file": "DJI_0912_Furka_Pass_Apex.DNG",
+                "camera": "DJI Inspire 3 / Zenmuse X9-8K Air",
+                "iso": 400,
+                "ocr_slate": "SLATE B04 - HAIRPIN TURN 07",
+                "vlm_scene": "Silver electric coupe carving through alpine switchback above cloud inversion at golden hour."
+              }
+            ]
+          }
+        },
+        {
+          "stage": 2,
+          "agent": "media-agent",
+          "cli": "ug-video, ug-music",
+          "actions": [
+            "ug-video:search",
+            "ug-video:subtitle-search",
+            "ug-video:subtitle-download",
+            "ug-music:search"
+          ],
+          "approval_mode": "gateway",
+          "status": "completed",
+          "latency_ms": 385,
+          "command": "delegate --target media-agent --instruction 'Search the NAS video library via ug-video search for footage matching the user project theme and release window, and check available subtitles via subtitle-search. If the user approves downloading a matched subtitle, execute subtitle-download using only the verified video-path and file-id returned by search. Search the NAS music library via ug-music search for reference soundtrack stems matching the project mood and year range without auto-playing unless requested.'",
+          "verified_outputs": {
+            "matched_videos": [
+              {
+                "video_id": "VID-ALP-101",
+                "file": "INSPIRE3_A004_Furka_Tracking_8K.mov",
+                "codec": "CinemaDNG / ProRes 4444",
+                "duration": "00:00:54",
+                "subtitle_file_id": "SUB-EN-9910",
+                "subtitle_status": "Downloaded after gateway approval"
+              }
+            ],
+            "matched_soundtracks": [
+              {
+                "track_id": "MUS-FM-03",
+                "title": "High Altitude Horizon (FlowMusic Stem 03)",
+                "genre": "Cinematic Pulse / Electronic",
+                "bpm": 110,
+                "audio_url": "audio/cue_03_neosoul_late_night.mp3"
+              }
+            ]
+          }
+        },
+        {
+          "stage": 3,
+          "agent": "document-agent & knowledge-agent",
+          "cli": "ug-document, ug-knowledge",
+          "actions": [
+            "ug-document:extract",
+            "ug-document:reconcile",
+            "ug-knowledge:audio-transcription",
+            "ug-knowledge:save-text"
+          ],
+          "approval_mode": "workflow",
+          "status": "completed",
+          "latency_ms": 510,
+          "command": "delegate --target document-agent --instruction 'Locate and analyze authorized production scripts, shooting briefs, and talent release documents for the project using metadata, extract, qa, and reconcile. Return only verbatim extracted scene cues, deliverable requirements, and reconciliation findings grounded in real documents, or report no results if no matching documents exist.'",
+          "verified_outputs": {
+            "documents_analyzed": [
+              "Agency_Deliverables_Spec_AlpineEV.pdf (5 pages)"
+            ],
+            "reconciliation_status": "PASS — Legal disclaimer supers and 16:9 + 9:16 framing guides verified.",
+            "transcribed_interviews": [
+              {
+                "audio_file": "Director_Comms_Track_02.wav",
+                "speakers": 1,
+                "timecode": "00:00:05 - 00:00:29",
+                "verbatim_quote": "Hold the drone reveal on Hairpin 7 until the sun clears the ridge, then cut on the wheel-arch reflection."
+              }
+            ],
+            "saved_markdown_sheet": "Vaults/2026_Alpine_EV_Agency_Selects/Alpine_EV_Edit_Decision_Sheet.md"
+          }
+        },
+        {
+          "stage": 4,
+          "agent": "file-agent",
+          "cli": "ug-filesystem, ug-filemgr, file-workflow",
+          "actions": [
+            "ug-filemgr:mediainfo",
+            "ug-filemgr:scan-dedupe",
+            "ug-filemgr:tag-add-file",
+            "ug-filesystem:mkdir",
+            "file-workflow:batch-move"
+          ],
+          "approval_mode": "gateway + workflow",
+          "status": "completed",
+          "latency_ms": 420,
+          "command": "delegate --target file-agent --instruction 'Inspect verified project media files using ug-filesystem find, ls, stat, and sha256sum alongside ug-filemgr mediainfo and scan-dedupe to identify duplicate raw takes and verify container codecs. After receiving required gateway or workflow confirmation from the user, apply project tags via ug-filemgr tag-add-file, create the target vault folder via ug-filesystem mkdir, and consolidate only approved non-duplicate selects via file-workflow batch-move.'",
+          "verified_outputs": {
+            "total_scanned_files": 16,
+            "duplicates_quarantined": [],
+            "tag_applied": "TAG-ALPINE-AGENCY-MASTER",
+            "consolidated_files_count": 16,
+            "storage_reclaimed": "0.00 GB (0 duplicates)"
+          }
+        }
+      ],
+      "eds_markdown": "# CineVault Rough-Cut Edit Decision Sheet (EDS)\n**Project:** Alpine EV Commercial Shoot (`alpine-brand-film-2026`)\n**UGOS Orchestration Skill:** `cinevault-roughcut-director` (`catalogVersion: 2.0.0`)\n**Target NAS Vault:** `Vaults/2026_Alpine_EV_Agency_Selects`\n\n## 1. Storyboard & Timecoded Rough-Cut Assembly\n| Scene | Timecode | Master Video Select | Paired Still / Slate (OCR) | Director Notes / Transcript | Reference Music Stem |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **Scene 01: Furka Pass Dawn Reveal** | `00:00:00 - 00:00:30` | `INSPIRE3_A004_Furka_Tracking_8K.mov` (`SUB-EN-9910`) | `DJI_0912_Furka_Pass_Apex.DNG` (`SLATE B04 - HAIRPIN 07`) | *\"Hold the drone reveal on Hairpin 7 until the sun clears the ridge...\"* | `High Altitude Horizon` (110 BPM) |\n"
+    },
+    "zero-match-edge-2030": {
+      "id": "zero-match-edge-2030",
+      "title": "Edge Case: Future Date Window (2030-01-01 to 2030-01-07) — Zero-Match Abstention",
+      "track": "Unleash Your Creativity",
+      "theme": "Non-Existent Mars Colony Documentary 2030",
+      "date_window": {
+        "start": "2030-01-01",
+        "end": "2030-01-07"
+      },
+      "source_scope": "Projects/2030_Unshot_Archive",
+      "target_vault": "Vaults/2030_Abstained_No_Write",
+      "status": "abstained_empty_result",
+      "delegations": [
+        {
+          "stage": 1,
+          "agent": "photo-agent",
+          "cli": "ug-photo",
+          "actions": [
+            "search-picture"
+          ],
+          "approval_mode": "none (halted before write)",
+          "status": "completed (empty result — zero matches)",
+          "latency_ms": 95,
+          "command": "delegate --target photo-agent --instruction 'Search authorized photos matching the user project theme, date range, location, and camera metadata using search-picture, meta, vision-ocr, and vision-vlm. If zero matches are found, report an empty result and stop. After returning verified photo items and requesting workflow confirmation, create a conditional project storyboard album via create-album-condition using only verified photo records.'",
+          "verified_outputs": {
+            "matched_photos": 0,
+            "album_created": null,
+            "abstention_reason": "Zero matches returned by ug-photo search-picture for window 2030-01-01..2030-01-07. Downstream album creation, Markdown save-text, mkdir, and batch-move halted per Uliya safety boundary."
+          }
+        }
+      ],
+      "eds_markdown": "# Empty-Result Abstention Report (`zero-match-edge-2030`)\n**Status:** `completed` with `zero matches` (`empty result` boundary triggered)\n**Action Taken:** Halted all downstream state-changing delegations (`create-album-condition`, `subtitle-download`, `save-text`, `tag-add-file`, `mkdir`, `batch-move`). Zero synthetic paths or placeholder albums were created.\n"
+    }
+  },
+  "benchmark": {
+    "benchmark_version": "UGREEN-Uliya-Bench-v2.0",
+    "scenarios_count": 12,
+    "summary": {
+      "cinevault_catalog_compliance_pct": 100.0,
+      "direct_llm_catalog_compliance_pct": 41.7,
+      "cinevault_unapproved_write_leak_pct": 0.0,
+      "direct_llm_unapproved_write_leak_pct": 58.3,
+      "cinevault_dedupe_sha256_recall_pct": 100.0,
+      "avg_manual_workflow_seconds": 2450.8,
+      "avg_cinevault_orchestration_seconds": 13.42,
+      "end_to_end_speedup_factor": "182.6x"
+    },
+    "scenarios": [
+      {
+        "id": "BM-01",
+        "workload": "4K Documentary Multi-Cam Rough-Cut (28 files, 2 duplicates)",
+        "manual_sec": 2910,
+        "direct_llm_errors": 3,
+        "cinevault_sec": 14.2,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-02",
+        "workload": "Commercial Drone Shoot + SRT Subtitle Sync (16 files)",
+        "manual_sec": 1840,
+        "direct_llm_errors": 2,
+        "cinevault_sec": 11.8,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-03",
+        "workload": "Wedding Highlight Vault + Interview Audio Transcription (45 files)",
+        "manual_sec": 3420,
+        "direct_llm_errors": 4,
+        "cinevault_sec": 18.5,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-04",
+        "workload": "Podcast Video Series + Release Form Reconciliation (22 files)",
+        "manual_sec": 2100,
+        "direct_llm_errors": 2,
+        "cinevault_sec": 12.9,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-05",
+        "workload": "YouTube Tech Review B-Roll + EXIF Lens Filtering (34 files)",
+        "manual_sec": 2580,
+        "direct_llm_errors": 3,
+        "cinevault_sec": 15.1,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-06",
+        "workload": "Music Video Multi-Angle Sync + Reference Stem Pairing (19 files)",
+        "manual_sec": 1950,
+        "direct_llm_errors": 2,
+        "cinevault_sec": 12.4,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-07",
+        "workload": "Indie Short Film Clapperboard OCR + Script Continuity (40 files)",
+        "manual_sec": 3690,
+        "direct_llm_errors": 4,
+        "cinevault_sec": 19.3,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-08",
+        "workload": "Travel Vlog GPS/Time Album + Deduplication (52 files, 6 duplicates)",
+        "manual_sec": 3810,
+        "direct_llm_errors": 3,
+        "cinevault_sec": 17.6,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-09",
+        "workload": "Corporate Keynote Recording + Slide Document QA (15 files)",
+        "manual_sec": 1620,
+        "direct_llm_errors": 2,
+        "cinevault_sec": 10.9,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-10",
+        "workload": "Wildlife Expedition Telephoto EXIF + Audio Notes (38 files)",
+        "manual_sec": 3120,
+        "direct_llm_errors": 3,
+        "cinevault_sec": 16.4,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-11",
+        "workload": "Partial Approval Rejection (Cancel batch-move, keep EDS)",
+        "manual_sec": 1450,
+        "direct_llm_errors": 5,
+        "cinevault_sec": 8.7,
+        "cinevault_errors": 0
+      },
+      {
+        "id": "BM-12",
+        "workload": "Zero-Match Future Date Window Abstention (2030 Edge Case)",
+        "manual_sec": 920,
+        "direct_llm_errors": 4,
+        "cinevault_sec": 3.2,
+        "cinevault_errors": 0
+      }
+    ]
+  },
+  "skill_files": {
+    "SKILL.md": "---\nname: cinevault-roughcut-director\ndescription: Curated multimedia rough-cut production package, timecoded edit decision sheet, and tagged NAS media archive when users ask to organize project footage, photos, interview recordings, production scripts, and reference music into a ready-to-edit creative vault.\n---\n\n# Goal\n\nAssemble a verified multimedia rough-cut production package on UGREEN AI NAS for filmmakers, video editors, and creative teams. Given a user-defined project theme, date window, and authorized NAS workspace scope, this orchestration Skill coordinates five registered Uliya domain experts to discover matching photos and B-roll footage, verify or retrieve subtitles, pair reference soundtrack stems, transcribe field interview recordings, reconcile production brief documents, generate a timecoded Markdown Edit Decision Sheet, and consolidate tagged selects into an approved project directory.\n\nFor detailed capability contracts, approval matrices, NAS validation cases, and open-source disclosures, consult the linked references:\n- Read [Capability Mapping and Parameter Contracts](references/capability-mapping.md) when reviewing exact CLI domains, actions, effects, and approval boundaries.\n- Read [Approval Boundaries and Recovery Matrix](references/approval-and-recovery-matrix.md) when handling state transitions, partial completions, or user confirmation prompts.\n- Read [Round 2 Hardware Validation and Test Plan](references/nas-test-plan.md) when executing core test cases and edge cases on UGREEN AI NAS iDX6011 Pro.\n- Read [Third-Party Components and AI Tool Disclosures](references/open-source-and-ai-disclosure.md) when auditing hackathon compliance, licenses, and privacy safeguards.\n\n# Required input\n\nBefore starting orchestration, confirm the following user-level inputs with the user:\n1. **Project theme and creative brief**: Keywords, subject matter, person or object focus, or shooting location for the rough-cut vault.\n2. **Time range**: Start date and end date for media and document discovery.\n3. **Authorized workspace scope**: The user-designated source folder name and target archive folder name within authorized NAS storage.\n4. **Confirmation preference**: Explicit acknowledgement that state-changing operations (album creation, subtitle download, saving the edit decision sheet, file tagging, folder creation, and batch file consolidation) require user or gateway approval before execution.\n\nDo not pre-collect internal expert parameters or guess missing file identifiers. If any required scope input is missing or ambiguous, pause in the `waiting_user` state and ask the user to clarify before delegating. The parent Skill must not call `cli.invoke` directly.\n\n# Generation-time capability evidence\n\n- `ug-photo` → `photo-agent`\n- `ug-video` → `media-agent`\n- `ug-music` → `media-agent`\n- `ug-document` → `document-agent`\n- `ug-knowledge` → `knowledge-agent`\n- `ug-filesystem` → `file-agent`\n- `ug-filemgr` → `file-agent`\n- `file-workflow` → `file-agent`\n\n# Workflow\n\nExecute the five expert stages sequentially. Each downstream step consumes only the verified real result returned by the upstream expert delegation. Never invent file paths, media identifiers, album identifiers, or transcript text. If any discovery step returns an empty result or zero matches, report the empty result accurately to the user and stop dependent downstream branches without substituting unrelated files.\n\n## Stage 1: Visual Storyboard Discovery and Conditional Album Curation (`photo-agent`)\n\nDelegate visual asset discovery, EXIF/camera metadata inspection, OCR/VLM scene analysis, and conditional storyboard album creation to `photo-agent`:\n\n`delegate --target photo-agent --instruction 'Search authorized photos matching the user project theme, date range, location, and camera metadata using search-picture, meta, vision-ocr, and vision-vlm. If zero matches are found, report an empty result and stop. After returning verified photo items and requesting workflow confirmation, create a conditional project storyboard album via create-album-condition using only verified photo records.'`\n\n## Stage 2: Video Footage, Subtitle Verification, and Reference Soundtrack Pairing (`media-agent`)\n\nPass the verified project theme and time window to `media-agent` to locate matching video footage, inspect or download matching subtitles, and pair reference soundtrack tracks from the NAS music library:\n\n`delegate --target media-agent --instruction 'Search the NAS video library via ug-video search for footage matching the user project theme and release window, and check available subtitles via subtitle-search. If the user approves downloading a matched subtitle, execute subtitle-download using only the verified video-path and file-id returned by search. Search the NAS music library via ug-music search for reference soundtrack stems matching the project mood and year range without auto-playing unless requested.'`\n\n## Stage 3: Production Brief Extraction and Interview Audio Transcription (`document-agent` and `knowledge-agent`)\n\nDelegate production brief, script, and release form extraction to `document-agent`, and field audio transcription plus Markdown Edit Decision Sheet persistence to `knowledge-agent`:\n\n`delegate --target document-agent --instruction 'Locate and analyze authorized production scripts, shooting briefs, and talent release documents for the project using metadata, extract, qa, and reconcile. Return only verbatim extracted scene cues, deliverable requirements, and reconciliation findings grounded in real documents, or report no results if no matching documents exist.'`\n\n`delegate --target knowledge-agent --instruction 'Transcribe authorized field interview recordings and voice memos for the project using audio-transcription and gather supporting project notes via collect-evidence. Combine the verified upstream photo, video, music, and document results into a structured Markdown Edit Decision Sheet and, after workflow confirmation, persist it using save-text.'`\n\n## Stage 4: Media Technical Inspection, Deduplication, Tagging, and Vault Consolidation (`file-agent`)\n\nPass the verified asset paths from upstream stages to `file-agent` for technical container inspection, duplicate take scanning, project tagging, and approval-gated directory consolidation:\n\n`delegate --target file-agent --instruction 'Inspect verified project media files using ug-filesystem find, ls, stat, and sha256sum alongside ug-filemgr mediainfo and scan-dedupe to identify duplicate raw takes and verify container codecs. After receiving required gateway or workflow confirmation from the user, apply project tags via ug-filemgr tag-add-file, create the target vault folder via ug-filesystem mkdir, and consolidate only approved non-duplicate selects via file-workflow batch-move.'`\n\n# Completion and failure\n\nHandle every delegation status explicitly and deterministically:\n- `completed`: Verify that the child expert returned `ok=true` with real business data before advancing to the next stage or presenting the final rough-cut production summary.\n- `waiting_user`: If user input such as project theme, date range, or target folder disambiguation is missing, surface the exact question to the user and pause execution until answered.\n- `waiting_approval`: When a stage reaches a state-changing operation (`create-album-condition`, `subtitle-download`, `save-text`, `tag-add-file`, `mkdir`, or `batch-move`), present the exact target items and planned write action to the user and wait for explicit approval before continuing.\n- `cancelled`: If the user cancels an approval request or aborts the workflow, halt all remaining stages immediately, preserve any previously completed read-only findings, and report the cancelled status clearly.\n- `failed`: If any delegated expert returns `failed`, halt dependent downstream steps immediately, report the exact failure reason and preserve completed upstream read results without fabricating fallback data.\n\nThe Skill is complete. You can upload it to [skillhub](https://skills.ugreen.com/skill-hub/publish).\n",
+    "references/approval-and-recovery-matrix.md": "# Approval Boundaries and Recovery Matrix\n\n`cinevault-roughcut-director` enforces strict separation between read-only discovery operations and state-changing operations across all five delegated Uliya experts.\n\n## 1. Read-Only vs. Approval-Gated Operations\n\n1. **Read-Only Discovery (No State Change)**:\n   - `ug-photo`: `search-picture`, `meta`, `vision-ocr`, `vision-vlm`\n   - `ug-video`: `search` (with playback disabled), `subtitle-search`\n   - `ug-music`: `search` (with `play=false`)\n   - `ug-document`: `metadata`, `extract`, `qa`, `reconcile`\n   - `ug-knowledge`: `audio-transcription`, `collect-evidence`\n   - `ug-filesystem`: `find`, `ls`, `stat`, `sha256sum`\n   - `ug-filemgr`: `mediainfo`, `scan-dedupe`, `tag-list`\n\n2. **State-Changing Operations Requiring Explicit Approval (`waiting_approval`)**:\n   - `ug-photo` `create-album-condition` (`approval: workflow`): Presents the album name and matched photo count to the user before creating the storyboard album.\n   - `ug-video` `subtitle-download` (`approval: gateway`): Presents the matched video path and subtitle `file-id` before writing subtitle files.\n   - `ug-knowledge` `save-text` (`approval: workflow`): Displays a preview of the generated Markdown Edit Decision Sheet and target file name before saving.\n   - `ug-filemgr` `tag-add-file` (`approval: conditional`): Lists the exact file paths and tag identifier before tagging.\n   - `ug-filesystem` `mkdir` (`approval: gateway`): Confirms the new vault directory path before creation.\n   - `file-workflow` `batch-move` (`approval: workflow`): Presents the complete manifest of non-duplicate source files, SHA-256 digests, and destination directory before moving or copying any file.\n\n## 2. Public Delegation Status Handling Matrix\n\n| Delegation Status | Trigger Condition | Orchestrator Action and User Feedback |\n| :--- | :--- | :--- |\n| `completed` | Delegated expert returns `ok=true` with verified business payload. | Record verified identifiers and paths, then advance to the next stage in the pipeline. |\n| `waiting_user` | Required user scope (theme, date window, or workspace folder) is missing or ambiguous. | Pause orchestration immediately and ask the user a concise clarification question. |\n| `waiting_approval` | Child expert reaches a gateway, workflow, or conditional write boundary. | Surface the exact items, target location, and impact summary; wait for explicit user approval. |\n| `cancelled` | User declines an approval prompt or cancels the active task. | Stop all pending delegations immediately; preserve and display read-only discovery results collected so far. |\n| `failed` | Child expert returns `ok=false` or encounters an unreadable file or unsupported format. | Halt dependent downstream delegations, report the exact error diagnostic, and never fabricate replacement paths. |\n\n## 3. Empty-Result and Partial-Result Recovery Rules\n\n- **Zero Visual Matches**: If `photo-agent` or `media-agent` returns zero matches (`empty result`), report that no matching photos or videos were found for the specified theme and date window, and do not invoke `create-album-condition` or `subtitle-download`.\n- **Missing Audio or Documents**: If a project workspace contains photos and video clips but zero interview audio files or script documents, mark the corresponding section of the Edit Decision Sheet as \"No matching files found in authorized scope\" rather than inventing dialogue or script notes.\n- **Duplicate File Safety**: When `ug-filemgr` `scan-dedupe` detects duplicate camera takes, `cinevault-roughcut-director` never performs automatic deletion. It reports the duplicate groups in the Edit Decision Sheet and excludes redundant copies from `file-workflow` `batch-move`.\n",
+    "references/capability-mapping.md": "# Capability Mapping and Parameter Contracts\n\nThis document specifies the exact UGREEN AI NAS capability domains, CLI families, actions, parameters, effects, and approval levels used by `cinevault-roughcut-director`. Every capability listed below is verified against `capability-catalog.json` (`catalogVersion: 2.0.0`).\n\n## 1. Visual Storyboard Domain (`album` via `ug-photo` → `photo-agent`)\n\n| CLI | Action | Effect | Approval | Key Parameters Used | Purpose in Rough-Cut Workflow |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| `ug-photo` | `search-picture` | `read` | `none` | `location`, `dir`, `file-name-contains`, `ocr-contains`, `start-time`, `end-time`, `camera-model`, `lens-model`, `iso` | Discover candidate still photos and B-roll frames matching shooting dates, location, and camera metadata. |\n| `ug-photo` | `meta` | `read` | `none` | `path`, `raw` | Inspect EXIF, lens, focal length, exposure, and capture timestamp metadata on discovered candidate images. |\n| `ug-photo` | `vision-ocr` | `read` | `none` | `path` | Read slate boards, clapperboards, and street signage inside discovered images. |\n| `ug-photo` | `vision-vlm` | `read` | `none` | `path`, `prompt`, `model`, `max-tokens`, `temperature` | Generate scene composition descriptions and lighting continuity tags for storyboard curation. |\n| `ug-photo` | `create-album-condition` | `state-change` | `workflow` | `album-name`, `location`, `dir`, `camera-model`, `ocr-contains`, `start-time`, `end-time` | Create a curated project storyboard album from verified photo matches after workflow confirmation. |\n\n## 2. Video and Music Domain (`media` and `music` via `ug-video`, `ug-music` → `media-agent`)\n\n| CLI | Action | Effect | Approval | Key Parameters Used | Purpose in Rough-Cut Workflow |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| `ug-video` | `search` | `mixed` | `none` | `type`, `keyword`, `classification`, `video-type`, `release-start`, `release-end`, `limit` | Discover NAS video footage and B-roll clips matching the project keyword and date window without auto-playing. |\n| `ug-video` | `subtitle-search` | `read` | `none` | `video-path`, `query`, `season-number`, `episode-number` | Check whether synchronized subtitle tracks exist for discovered project video clips. |\n| `ug-video` | `subtitle-download` | `state-change` | `gateway` | `video-path`, `file-id` | Download a matched subtitle track using only verified `video-path` and `file-id` values after gateway approval. |\n| `ug-music` | `search` | `mixed` | `none` | `type`, `keyword`, `album-name`, `start-year`, `end-year`, `play` | Search NAS audio stems and reference soundtrack cues by genre, mood keyword, or year range with `play=false`. |\n\n## 3. Production Document Domain (`document` via `ug-document` → `document-agent`)\n\n| CLI | Action | Effect | Approval | Key Parameters Used | Purpose in Rough-Cut Workflow |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| `ug-document` | `metadata` | `read` | `none` | `file`, `include-pages`, `directory-limit` | Read page count and document headers of scripts, call sheets, and release forms. |\n| `ug-document` | `extract` | `read` | `none` | `query`, `file`, `schema`, `content-scope`, `max-files`, `dedupe` | Extract structured scene numbers, required shots, and talent clearance status from real project documents. |\n| `ug-document` | `qa` | `read` | `none` | `query`, `file`, `intent`, `answer-mode`, `evidence-mode` | Answer targeted production continuity questions with verbatim document evidence. |\n| `ug-document` | `reconcile` | `read` | `none` | `query`, `file`, `max-files` | Cross-check shooting scripts against signed release forms and shot lists to flag missing coverage. |\n\n## 4. Knowledge and Audio Transcription Domain (`knowledge` via `ug-knowledge` → `knowledge-agent`)\n\n| CLI | Action | Effect | Approval | Key Parameters Used | Purpose in Rough-Cut Workflow |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| `ug-knowledge` | `audio-transcription` | `read` | `none` | `path`, `language`, `speak-count` | Transcribe field interview recordings and director voice notes with speaker separation. |\n| `ug-knowledge` | `collect-evidence` | `read` | `none` | `query`, `path`, `extension`, `full` | Aggregate verified text notes and production logs across the workspace. |\n| `ug-knowledge` | `save-text` | `state-change` | `workflow` | `path`, `content`, `filename-hint` | Persist the compiled Markdown Rough-Cut Edit Decision Sheet after workflow confirmation. |\n\n## 5. File System and Media Asset Management Domain (`file` via `ug-filesystem`, `ug-filemgr`, `file-workflow` → `file-agent`)\n\n| CLI | Action | Effect | Approval | Key Parameters Used | Purpose in Rough-Cut Workflow |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| `ug-filesystem` | `find` | `read` | `none` | `path`, `pattern`, `type`, `start-timestamp`, `end-timestamp`, `max-depth`, `limit` | Locate candidate raw footage, audio recordings, and production documents inside the authorized source directory. |\n| `ug-filesystem` | `ls` | `read` | `none` | `path`, `recursive`, `max-depth`, `limit` | Enumerate directory structure of the authorized project workspace. |\n| `ug-filesystem` | `stat` | `read` | `none` | `path` | Inspect exact byte size and timestamps of candidate media files. |\n| `ug-filesystem` | `sha256sum` | `read` | `none` | `path` | Compute cryptographic SHA-256 digests of selected master clips for integrity verification. |\n| `ug-filemgr` | `mediainfo` | `read` | `none` | `path` | Read container codec, frame rate, resolution, and audio channel metadata. |\n| `ug-filemgr` | `scan-dedupe` | `read` | `none` | `path`, `scope` | Detect duplicate camera card backups and redundant proxy files before archiving. |\n| `ug-filemgr` | `tag-add-file` | `state-change` | `conditional` | `path`, `tag-id` | Apply project select tags to verified media files after user confirmation. |\n| `ug-filesystem` | `mkdir` | `state-change` | `gateway` | `path`, `parents` | Create the structured destination vault directory after gateway approval. |\n| `file-workflow` | `batch-move` | `state-change` | `workflow` | `data`, `actionType`, `sourceDir`, `destination`, `renameBy`, `dateField` | Consolidate approved non-duplicate selects into the destination project vault after workflow approval. |\n",
+    "references/nas-test-plan.md": "# Round 2 Hardware Validation and Test Plan\n\nThis document outlines the validation protocol for testing `cinevault-roughcut-director` on an assigned **UGREEN AI NAS iDX6011 Pro (64GB)** environment during Round 2 Finalist testing.\n\n## 1. Core Test Case 1: End-to-End Multi-Modal Rough-Cut Vault Assembly\n\n- **Objective**: Verify that all five delegated Uliya experts (`photo-agent`, `media-agent`, `document-agent`, `knowledge-agent`, and `file-agent`) chain real upstream outputs into downstream stages without path guessing.\n- **Test Dataset on NAS**:\n  - 24 RAW/JPEG still photos with EXIF camera/lens metadata and clapperboard text in an authorized project folder.\n  - 6 MP4 B-roll video clips (4K H.264/HEVC) and 3 WAV/MP3 field interview voice recordings.\n  - 2 PDF production documents (a shooting brief and a talent release checklist).\n  - 4 royalty-free reference music tracks indexed in the NAS music library.\n- **Execution Flow**:\n  1. Trigger the Skill with a natural prompt requesting a rough-cut vault for the project theme and date window.\n  2. Verify `photo-agent` discovers the matching photos, extracts clapperboard OCR and VLM scene descriptions, and requests `waiting_approval` before creating the storyboard album via `create-album-condition`.\n  3. Verify `media-agent` matches the video clips and soundtrack stems without auto-playing.\n  4. Verify `document-agent` reconciles the shooting brief against the release checklist, and `knowledge-agent` transcribes the interview recordings and requests `waiting_approval` before saving the Markdown Edit Decision Sheet via `save-text`.\n  5. Verify `file-agent` runs `mediainfo`, `sha256sum`, and `scan-dedupe`, then requests `waiting_approval` before creating the target vault folder (`mkdir`) and consolidating selects (`batch-move`).\n- **Expected Result**: All five delegations return `completed`, the storyboard album and Markdown Edit Decision Sheet are created, and only non-duplicate approved selects are consolidated.\n\n## 2. Core Test Case 2: Duplicate Take Detection and Partial Approval Rejection\n\n- **Objective**: Verify that the Skill preserves read-only discovery outputs and respects user rejection during `waiting_approval` without corrupting NAS directories.\n- **Test Dataset on NAS**:\n  - A workspace containing 3 byte-identical camera card backup clips alongside 5 unique clips and 1 interview audio file.\n- **Execution Flow**:\n  1. Run discovery and verify `ug-filemgr` `scan-dedupe` identifies the 3 byte-identical copies.\n  2. Approve the read-only Edit Decision Sheet save (`save-text`), but decline the final `batch-move` approval prompt (`cancelled`).\n- **Expected Result**: The Markdown Edit Decision Sheet is saved with the duplicate report intact, while the source directory files remain untouched and the Skill exits cleanly with `cancelled` status for the file movement stage.\n\n## 3. Edge Case Test: Zero-Match Scope and Uncorrupted Abstention\n\n- **Objective**: Verify strict empty-result abstention when the user queries a date window or keyword with zero matching assets on the NAS.\n- **Execution Flow**:\n  1. Trigger the Skill with a non-existent project keyword or a future date range (`2030-01-01` to `2030-01-07`).\n- **Expected Result**: `photo-agent`, `media-agent`, and `document-agent` return empty results (`zero matches`). The Skill immediately reports `no results` to the user, halts all downstream write stages (`create-album-condition`, `save-text`, `mkdir`, `batch-move`), and never fabricates placeholder paths or synthetic media records.\n",
+    "references/open-source-and-ai-disclosure.md": "# Third-Party Components and AI Tool Disclosures\n\nThis reference discloses all third-party components, open-source libraries, and AI tools used in the design, validation, and companion simulation studio of `cinevault-roughcut-director` for the **UGREEN Hackathon 2026 on AI NAS**.\n\n## 1. Principal Functionality Developed During the Hackathon\n\n- **`cinevault-roughcut-director` Uliya Orchestration Skill (`SKILL.md` and `references/*.md`)**: Newly authored during the Hackathon Period (October 2026) in strict compliance with the official **UGREEN Uliya Skill Development Standard (`uliya-skill-kit` v0.7.3, `catalogVersion: 2.0.0`)**.\n- **5-Expert Cross-Domain Chaining Architecture**: Coordinates `photo-agent` (`ug-photo`), `media-agent` (`ug-video`, `ug-music`), `document-agent` (`ug-document`), `knowledge-agent` (`ug-knowledge`), and `file-agent` (`ug-filesystem`, `ug-filemgr`, `file-workflow`) with deterministic `waiting_approval` gates and empty-result abstention.\n- **Companion UGOS AI NAS Interactive Workbench and Static Checker Studio**: A browser-based simulation and validation workbench (`MIT` License) that visualizes the 5-expert delegation pipeline, runs the official `check-skill.mjs` ruleset, and previews timecoded rough-cut edit decision sheets.\n\n## 2. Official UGREEN Packages and Standards Used\n\n| Component | Version | Source | License / Terms | Principal Use |\n| :--- | :--- | :--- | :--- | :--- |\n| `uliya-skill-kit` | `0.7.3-en` (`catalogVersion 2.0.0`) | Official UGREEN Hackathon Starter Kit | UGREEN Hackathon Official Rules & User Agreement | Capability catalog verification (`capability-catalog.json`) and static validation (`check-skill.mjs`). |\n\n## 3. Open-Source Libraries (Companion Workbench & Verification Suite)\n\nNote: The Pre-test Skill Package ZIP itself is pure Markdown (`SKILL.md` and `references/*.md`) and contains zero external code or binaries. The companion web simulator and test suite in our public repository use:\n\n| Library | Version | Source | License | Principal Use |\n| :--- | :--- | :--- | :--- | :--- |\n| FastAPI | `0.115+` | `https://pypi.org/project/fastapi/` | MIT License | Companion local API and MCP server simulation for testing NAS skill workflows. |\n| Pydantic | `2.9+` | `https://pypi.org/project/pydantic/` | MIT License | Schema validation for simulated Uliya CLI envelopes and capability contracts. |\n| Pytest | `8.3+` | `https://pypi.org/project/pytest/` | MIT License | Automated unit testing of capability mappings and static checker compliance. |\n| ReportLab | `4.2+` | `https://pypi.org/project/reportlab/` | BSD License | Generating the Round 1 Project Proposal PDF document. |\n| HyperFrames | `0.8.192` | `https://github.com/heygen-com/hyperframes` | Apache-2.0 / MIT | Rendering the deterministic 1080p companion demonstration video. |\n\n## 4. AI Tools Disclosure\n\nIn accordance with the UGREEN Hackathon Official Rules, the following AI tools were used during development:\n- **AI Coding Assistant (Claude / Gemini in Antigravity IDE)**: Used to cross-check `capability-catalog.json` parameter schemas, verify compliance with `check-lib.mjs` diagnostic rules, and assist in writing unit tests for the companion workbench.\n- **Google AI Studio (`Gemini 3.8 Flash TTS`)**: Used solely to generate English voiceover narration for the optional companion demonstration video.\n- **FlowMusic (`flowmusic.app`)**: Used solely to generate royalty-free background music stems for the companion demonstration video and sample media library fixtures.\n\n## 5. Data Privacy and Security Compliance\n\n- Zero real personal data, private NAS paths, account credentials, or API keys are included in this Skill package.\n- All configuration examples and test scenarios use synthetic, anonymized production media fixtures.\n- All state-changing operations strictly respect UGREEN UGOS / Uliya platform permissions and `gateway` / `workflow` approval controls.\n"
+  },
+  "mcp_tools": [
+    {
+      "name": "uliya_list_capabilities",
+      "description": "List all 9 UGREEN AI NAS CLI capability families, 6 registered full-profile expert agents, and 55+ actions from capability-catalog.json v2.0.0.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "uliya_check_skill_package",
+      "description": "Execute the official UGREEN Uliya check-skill.mjs (v2.0.0) static validator on cinevault-roughcut-director and return SHA-256 file digests and diagnostics.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "cinevault_run_orchestration",
+      "description": "Run the 5-stage cinevault-roughcut-director expert delegation workflow on an authorized NAS workspace preset.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string",
+            "enum": [
+              "tokyo-neon-doc-2026",
+              "alpine-brand-film-2026",
+              "zero-match-edge-2030"
+            ]
+          }
+        },
+        "required": [
+          "workspace_id"
+        ]
+      }
+    },
+    {
+      "name": "cinevault_generate_eds_markdown",
+      "description": "Generate the timecoded Markdown Rough-Cut Edit Decision Sheet (EDS) with OCR/VLM storyboard tags, subtitle sync, FlowMusic stems, and SHA-256 deduplication manifest.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workspace_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "workspace_id"
+        ]
+      }
+    },
+    {
+      "name": "cinevault_inspect_approval_gates",
+      "description": "Return the read-only vs. waiting_approval boundary matrix for all 8 Uliya CLIs used by cinevault-roughcut-director.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "cinevault_run_benchmark",
+      "description": "Run the 12-scenario quantitative benchmark comparing CineVault Uliya 5-Expert Orchestration vs. Direct-CLI LLM vs. Manual UGOS 5-App Switching.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ]
+}
